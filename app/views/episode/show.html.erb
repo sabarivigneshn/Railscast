@@ -1,0 +1,13 @@
+<h2>show page</h2>
+
+<div>
+ <p><b>Episode name:</b><%= @episode.name %></p>
+ <p><b>Category:</b><%= @episode.category.name rescue ''%></p>
+ <p><b>EpisodeType:</b><%= @episode.episode_type.name rescue ''%></p>
+ <p><b>About:</b><%=@episode.about %></p>
+ <p><b>ReleasedDate:</b><%= @episode.release_date rescue ''%></p>
+ <p><b>Duration:</b><%= @episode.duration rescue ''%></p>
+</div>
+
+<%= link_to "edit" ,edit_episode_path(@episode.id) %>
+<%= link_to "back", episode_index_path %>

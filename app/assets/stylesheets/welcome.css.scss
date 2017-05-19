@@ -1,0 +1,36 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.center_div{
+  border: 1px solid #d8dee2;
+  padding:20px;
+  margin: 20px auto;
+  max-width: 96%;
+  width:25%; /* value of your choice which suits your alignment */
+}
+#nav_bar {
+  position: relative;
+  color: darkgrey;
+  padding: 8px 100px;
+  background-color: #333;
+  border-top: solid 1px #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5c5c5c), to(#111));
+}
+
+#nav_bar .nav li {
+  padding-left: 25px;
+  font-size: 14px;
+  color: #BBB;
+}
+
+ul.horizontal li {
+  margin: -8px;
+  padding: 0;
+  float: left;
+
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+

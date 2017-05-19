@@ -1,0 +1,13 @@
+<h2>New Category</h2>
+<div class="container">
+  <%= form_tag("/category",method: "post") do %>
+      <p class=""form-group>
+        <%= label_tag("name:")%>
+        <%= text_field_tag "name"%>
+      </p>
+      <p class="form-group">
+        <%= submit_tag "create" ,class: "btn btn-primary"%>
+      </p>
+  <% end %>
+  <%= link_to "Back", category_index_path%>
+</div>

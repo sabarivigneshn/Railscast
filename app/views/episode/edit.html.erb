@@ -1,0 +1,55 @@
+<h2>Edit episode</h2>
+
+<%= form_tag({controller: "episode",action: "update"}, method: "put") do %>
+
+    <p class="form-group">
+      <%= label_tag("name:")%>
+      <%= text_field_tag "name",@episode.name %>
+    </p>
+    <p class="form-group">
+      <%= label_tag "Category:" %>
+      <%= select_tag "category_id",options_for_select(Category.all.map{|c|[c.name,c.id]},@episode.category_id),:prompt => "select category" %>
+    </p>
+    <p class="form-group">
+      <%= label_tag "Episodetype:" %>
+      <%= select_tag "episode_type_id",options_for_select(EpisodeType.all.map{|e| [e.name,e.id]} ,@episode.episode_type_id ),:prompt => "select EpisodeType" %>
+    </p>
+    <p class="form-group">
+      <%= label_tag "about:" %>
+      <%= text_area_tag "about",@episode.about %>
+    </p >
+    <p class="form-group">
+      <%= label_tag "upload_image" %>
+      <%= file_field_tag "image" %>
+    </p>
+    <p class="form-group">
+      <%= label_tag "upload_video" %>
+      <%= file_field_tag "video" %>
+    </p>
+    <p class="form-group">
+      <%= label_tag "release_date:" %>
+      <%= text_field_tag "release_date",@episode.release_date, class: "datepicker"%>
+    </p>
+    <p class="form-group">
+      <%= label_tag "duration:" %>
+      <%= text_field_tag "duration",@episode.duration%>
+    </p>
+
+    <p class="form-group">
+      <%= submit_tag "update" ,class: "btn btn-primary"%>
+    </p>
+<% end %>
+
+<%#= link_to "update","/episode/#{@episode.id}",method: :put %>
+<%= link_to "back",episode_index_path %>
+
+<script>
+
+    $('.datepicker').datepicker();
+//    $('.timepicker').timepicker({
+//
+//        timeFormat: 'mm:ss',
+//
+//        'step': 01
+//    });
+</script>

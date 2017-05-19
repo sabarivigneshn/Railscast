@@ -1,0 +1,18 @@
+<h1>EpisodeType#edit</h1>
+
+<div class="container">
+  <%= form_tag({controller: "episode_type",action: "update"},method: "put") do %>
+      <p class=""form-group>
+        <%= label_tag("name:")%>
+        <%= text_field_tag "name",@episode_type.name%>
+      </p>
+      <p class="form-group">
+        <%= label_tag("notes:")%>
+        <%= text_area_tag "notes",@episode_type.notes%>
+      </p>
+      <p class="form-group">
+        <%= submit_tag "Update" ,class: "btn btn-primary"%>
+      </p>
+  <% end %>
+  <%= link_to "Back", episode_type_index_path%>
+</div>

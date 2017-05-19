@@ -1,0 +1,24 @@
+<h2>Categories</h2>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-responsive table-hover table-striped table-bordered">
+      <thead>
+      <th>Category</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      </thead>
+      <tbody>
+      <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.name%></td>
+            <td><%= link_to "edit","/category/#{category.id}/edit"%></td>
+            <td><%= link_to "delete","category/#{category.id}",method: "DELETE",confirm: "Are you sure?"%></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to "Create New Category",new_category_path %><br>
+  <%= link_to "Back", admin_path%>
+</div>
+

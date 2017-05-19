@@ -1,0 +1,26 @@
+<h2>EpisodeTypes</h2>
+<div class="container">
+    <div class="table-responsive">
+       <table class="table table-responsive table-hover table-striped table-bordered">
+          <thead>
+              <th>EpisodeType</th>
+              <th>Notes</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </thead>
+          <tbody>
+          <% @episode_types.each do |episode_type| %>
+              <tr>
+                  <td><%= episode_type.name%></td>
+                  <td><%=episode_type.notes %></td>
+                  <td><%= link_to "edit","/episode_type/#{episode_type.id}/edit"%></td>
+                <td><%= link_to "delete","episode_type/#{episode_type.id}",method: "DELETE",confirm: "Are you sure?"%></td>
+              </tr>
+          <% end %>
+          </tbody>
+       </table>
+    </div>
+    <%= link_to "Create New Episode Type",new_episode_type_path %><br>
+    <%= link_to "Back", admin_path%>
+</div>
+

@@ -1,0 +1,14 @@
+<h2>Edit Category</h2>
+
+<div class="container">
+  <%= form_tag({controller: "category",action: "update"},method: "put") do %>
+      <p class=""form-group>
+        <%= label_tag("name:")%>
+        <%= text_field_tag "name",@category.name%>
+      </p>
+      <p class="form-group">
+        <%= submit_tag "Update" ,class: "btn btn-primary"%>
+      </p>
+  <% end %>
+  <%= link_to "Back", category_index_path%>
+</div>

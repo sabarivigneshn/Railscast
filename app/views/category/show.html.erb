@@ -1,0 +1,8 @@
+<h2>Category</h2>
+<div class="container">
+  <div>
+    <p><b>Name:</b><%=@category.name rescue '' %></p>
+  </div>
+  <%= link_to "Edit","/category/#{@category.id}/edit"%><br>
+  <%= link_to "Back", category_index_path %>
+</div>

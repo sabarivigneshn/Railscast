@@ -1,0 +1,9 @@
+<h2>EpisodeType</h2>
+<div class="container">
+    <div>
+      <p><b>EpisodeType Name:</b><%=@episode_type.name rescue '' %></p>
+      <p><b>Notes:</b><%= @episode_type.notes rescue ''%></p>
+    </div>
+    <%= link_to "Edit","/episode_type/#{@episode_type.id}/edit"%><br>
+    <%= link_to "Back", episode_type_index_path %>
+</div>
