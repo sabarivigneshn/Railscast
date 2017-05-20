@@ -1,42 +1,45 @@
 <h2>Episodes</h2>
 <body>
-<div class="container">
-<div class="table-responsive">
-<table class="table table-striped table-bordered table-hover" >
-  <thead>
-    <th>Name</th>
-    <th>About</th>
-    <th>Image</th>
-    <th>Video</th>
-    <th>Category</th>
-    <th>EpisodeType</th>
-    <th>ReleaseDate</th>
-    <th>Duration</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </thead>
-  <tbody>
-  <% @episodes.each  do |episode| %>
-    <tr>
-        <td><%=episode.name%></td>
-        <td><%=episode.about%></td>
-        <td><%= image_tag("./../images/attachments/video.jpg") %>
+<% if @episodes.present? %>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" >
+                <thead>
+                    <th>Name</th>
+                    <th>About</th>
+                    <th>Image</th>
+                    <th>Video</th>
+                    <th>Category</th>
+                    <th>EpisodeType</th>
+                    <th>ReleaseDate</th>
+                    <th>Duration</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <% @episodes.each  do |episode| %>
+                        <tr>
+                            <td><%=episode.name%></td>
+                            <td><%=episode.about%></td>
+                            <td><%= image_tag("./../images/attachments/video.jpg") %>
 
-        <td>
-          <%= video_tag ("mov_bbb.mp4") ,:size => "320x240", :controls => true, :autobuffer => true %>
-        </td>1
-        <td><%= episode.category.name rescue ''%></td>
-        <td><%= episode.episode_type.name rescue ''%></td>
-        <td><%=episode.release_date%></td>
-        <td><%=episode.duration%></td>
-        <td><%=link_to "edit",edit_episode_path(episode.id)%></td>
-        <td><%= link_to "delete","episode/#{episode.id}",method: "DELETE",confirm: "Are you sure?"%></td>
-    </tr>
-      <% end %>
-  </tbody>
-</table>
-</div>
-</div>
+                            <td>
+                              <%= video_tag ("mov_bbb.mp4") ,:size => "320x240", :controls => true, :autobuffer => true %>
+                            </td>1
+                            <td><%= episode.category.name rescue ''%></td>
+                            <td><%= episode.episode_type.name rescue ''%></td>
+                            <td><%=episode.release_date%></td>
+                            <td><%=episode.duration%></td>
+                            <td><%=link_to "edit",edit_episode_path(episode.id)%></td>
+                            <td><%= link_to "delete","episode/#{episode.id}",method: "DELETE",confirm: "Are you sure?"%></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<% end %>
+
 <%= link_to "Create new episode" ,new_episode_path%><br>
 <%= link_to "Back",admin_path %>
 </body>
