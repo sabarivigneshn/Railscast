@@ -3,10 +3,10 @@ class CreateEpisodes < ActiveRecord::Migration
     create_table :episodes do |t|
       t.string :name
       t.text :about
-      t.binary :image
-      t.binary :video
-      t.time :duration
-      t.datetime :release_date
+      t.string :image
+      t.string :video
+      t.string :duration
+      t.date :release_date
       t.belongs_to :category, index: true
       t.belongs_to :episode_type, index: true
       t.timestamps

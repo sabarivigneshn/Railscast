@@ -1,6 +1,6 @@
 <h2>New Episode</h2>
 <div >
-<%= form_tag('/episode', method: "post") do %>
+<%= form_tag('/episode', method: "post",:multipart => true) do %>
 
         <p class="form-group">
         <%= label_tag("name:")%>
@@ -28,7 +28,7 @@
       </p>
       <p class="form-group">
         <%= label_tag "release_date:" %>
-        <%= text_field_tag "release_date",nil, class: "datepicker"%>
+        <%= text_field_tag "release_date",@episode.release_date, class: "datepicker"%>
       </p>
       <p class="form-group">
         <%= label_tag "duration:" %>

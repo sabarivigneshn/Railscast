@@ -21,10 +21,16 @@
     <p class="form-group">
       <%= label_tag "upload_image" %>
       <%= file_field_tag "image" %>
+      <% if @episode.image.present? %>
+           <%= image_tag @episode.image %>
+      <% end %>
     </p>
     <p class="form-group">
       <%= label_tag "upload_video" %>
       <%= file_field_tag "video" %>
+      <% if @episode.video.present? %>
+           <%= video_tag (@episode.video) ,:size => "320x240", :controls => true, :autobuffer => true %>
+      <% end %>
     </p>
     <p class="form-group">
       <%= label_tag "release_date:" %>

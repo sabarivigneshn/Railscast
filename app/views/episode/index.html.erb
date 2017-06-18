@@ -1,9 +1,11 @@
 <h2>Episodes</h2>
+
+
 <body>
 <% if @episodes.present? %>
     <div class="container">
         <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover" >
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <th>Name</th>
                     <th>About</th>
@@ -21,10 +23,9 @@
                         <tr>
                             <td><%=episode.name%></td>
                             <td><%=episode.about%></td>
-                            <td><%= image_tag("./../images/attachments/video.jpg") %>
-
+                            <td><%= image_tag episode.image %>
                             <td>
-                              <%= video_tag ("mov_bbb.mp4") ,:size => "320x240", :controls => true, :autobuffer => true %>
+                              <%= video_tag (episode.video) ,:size => "320x240", :controls => true, :autobuffer => true %>
                             </td>1
                             <td><%= episode.category.name rescue ''%></td>
                             <td><%= episode.episode_type.name rescue ''%></td>

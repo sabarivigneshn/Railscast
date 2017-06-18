@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'strong_parameters'
 gem 'bootstrap-datepicker-rails'
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.3'
+
 # gem 'bootstrap-timepicker-rails'
 # gem 'jquery-timepicker-rails'
 

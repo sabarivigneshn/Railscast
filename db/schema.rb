@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170405094227) do
+ActiveRecord::Schema.define(:version => 20170406093529) do
+
+  create_table "attachments", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20170405094227) do
 
   create_table "episode_types", :force => true do |t|
     t.string   "name"
+    t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -52,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20170405094227) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.boolean  "admin"
+    t.text     "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
