@@ -1,6 +1,6 @@
 <h2>Edit episode</h2>
 
-<%= form_tag({controller: "episode",action: "update"}, method: "put") do %>
+<%= form_tag("/episode/#{params[:id]}", method: "put", multipart: true) do %>
 
     <p class="form-group">
       <%= label_tag("name:")%>
@@ -20,14 +20,16 @@
     </p >
     <p class="form-group">
       <%= label_tag "upload_image" %>
-      <%= file_field_tag "image" %>
+      <%= image = File.basename (@episode.image.present? ? @episode.image.file.file : '') %>
+      <%= file_field_tag "image", value: image %>
       <% if @episode.image.present? %>
-           <%= image_tag @episode.image %>
+           <%= image_tag @episode.image,:size => '260x180' %>
       <% end %>
     </p>
     <p class="form-group">
       <%= label_tag "upload_video" %>
-      <%= file_field_tag "video" %>
+      <%= video =File.basename (@episode.video.present? ? @episode.video.file.file : '')  %>
+      <%= file_field_tag "video", value: video %>
       <% if @episode.video.present? %>
            <%= video_tag (@episode.video) ,:size => "320x240", :controls => true, :autobuffer => true %>
       <% end %>

@@ -10,10 +10,8 @@ class EpisodeController < ApplicationController
   end
 
   def create
-    p params[:video]
     @episode = Episode.new(episode_params)
-    p '===========epsidoe'
-    p @episode.video = params[:video]
+    @episode.video = params[:video]
     @episode.duration = params[:duration]
     respond_to do |format|
       if @episode.save
@@ -36,7 +34,6 @@ class EpisodeController < ApplicationController
   end
 
   def update
-    p episode_params
     respond_to do |format|
       if @episode.update_attributes(episode_params)
         format.html {redirect_to episode_path(@episode.id), notice: "Episode was successfully updated."}
