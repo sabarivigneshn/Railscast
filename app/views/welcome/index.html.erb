@@ -1,2 +1,37 @@
-<h2>Welcome</h2>
+<div class="message" style="margin-top:2%">
+
+</div>
+<div class="content">
+  <div class="side">
+    <div style="float:right;width:20%;">
+        <div class="episode_views" >
+            View:
+          <span class="view">
+            <%= image_tag "full.png"%>
+            <%= image_tag "list.png"%>
+            <%= image_tag "grid.png"%>
+          </span>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <% @episodes.each do |episode| %>
+        <div class="row episode" style="width:80%" >
+            <div class="image">
+                <%= image_tag episode.image, :size => '202x127' %></br>
+            </div>
+            <div class="main">
+              <div class="info">
+                <span style="float:left;"><b>Episode #<%=episode.id%> -</b> <%= episode.created_at.strftime("%b %d,%Y")%></span>
+              </div><br>
+              <h2><a><%= episode.name%></a></h2>
+              <div class="description">
+                <%= episode.about%>
+              </div>
+            </div>
+        </div>
+
+    <% end %>
+</div>
 

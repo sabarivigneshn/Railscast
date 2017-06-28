@@ -6,7 +6,7 @@ class CreateEpisodes < ActiveRecord::Migration
       t.string :image
       t.string :video
       t.string :duration
-      t.date :release_date
+      t.string :release_date
       t.belongs_to :category, index: true
       t.belongs_to :episode_type, index: true
       t.timestamps
