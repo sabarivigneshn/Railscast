@@ -27,9 +27,10 @@
     <img alt="RailsCasts - Ruby on Rails Screencasts" height="56" src="./../images/railscasts_logo.png" width="423" style="margin: 4% 0% 0% 5%;">
   </div></br>
 
-
-  <div id="nav_bar">
-    <ul class="nav horizontal" style="float:right;">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
+  <div id="navbar-header">
+    <ul class="nav navbar-nav" style="float:right;">
       <% begin %>
           <% if current_user.admin %>
               <li><%= link_to "Administration",admin_path %></li>
@@ -44,13 +45,14 @@
       <li><%= link_to "About"%></li>
       <li><%= link_to "Feedback" %></li>
     </ul>
+    <div class="centered">
     <%= text_field_tag 'search' %>
     <%= submit_tag 'search' %>
-
+    </div>
 
   </div>
-
-
+</div>
+</nav>
   <%= yield %>
 
 
